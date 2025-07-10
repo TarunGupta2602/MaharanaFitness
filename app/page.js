@@ -257,7 +257,7 @@ export default function Home() {
                 {testimonial.name}
               </h3>
               <p className="mt-2 text-gray-600 font-['Poppins'] italic">
-                "{testimonial.quote}"
+                &quot;{testimonial.quote}&quot;
               </p>
             </motion.div>
           ))}
