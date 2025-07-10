@@ -1,0 +1,324 @@
+
+'use client';
+
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+export default function Schedules() {
+  // Framer Motion variants for animations
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+    hover: { scale: 1.05, transition: { duration: 0.3 } },
+  };
+
+  const buttonVariants = {
+    hover: { scale: 1.1, transition: { yoyo: Infinity, duration: 0.4 } },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
+  };
+
+  // Dummy schedule data
+  const schedule = [
+    {
+      day: 'Monday',
+      classes: [
+        { time: '7:00 AM', type: 'HIIT', instructor: 'Coach Anika', image: '/2.jpg' },
+        { time: '6:00 PM', type: 'Yoga', instructor: 'Coach Anika', image: '/yoga.jpg' },
+      ],
+    },
+    {
+      day: 'Tuesday',
+      classes: [
+        { time: '8:00 AM', type: 'Personal Training', instructor: 'Coach Anika', image: '/2.jpg' },
+        { time: '7:00 PM', type: 'Cardio Kickboxing', instructor: 'Coach Anika', image: '/2.jpg' },
+      ],
+    },
+    {
+      day: 'Wednesday',
+      classes: [
+        { time: '6:30 AM', type: 'Yoga', instructor: 'Coach Anika', image: '/yoga.jpg' },
+        { time: '5:30 PM', type: 'Strength Training', instructor: 'Coach Anika', image: '/2.jpg' },
+      ],
+    },
+    {
+      day: 'Thursday',
+      classes: [
+        { time: '7:00 AM', type: 'Group Fitness', instructor: 'Coach Anika', image: '/2.jpg' },
+        { time: '6:00 PM', type: 'Nutrition Workshop', instructor: 'Coach Anika', image: '/4.jpg' },
+      ],
+    },
+    {
+      day: 'Friday',
+      classes: [
+        { time: '8:00 AM', type: 'Personal Training', instructor: 'Coach Anika', image: '/2.jpg' },
+        { time: '7:00 PM', type: 'Zumba', instructor: 'Coach Anika', image: '/2.jpg' },
+      ],
+    },
+    {
+      day: 'Saturday',
+      classes: [
+        { time: '9:00 AM', type: 'Yoga', instructor: 'Coach Anika', image: '/yoga.jpg' },
+        { time: '11:00 AM', type: 'HIIT', instructor: 'Coach Anika', image: '/2.jpg' },
+      ],
+    },
+    {
+      day: 'Sunday',
+      classes: [
+        { time: '10:00 AM', type: 'Restorative Yoga', instructor: 'Coach Anika', image: '/yoga.jpg' },
+      ],
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-100">
+      {/* Hero Section */}
+      <div className="relative bg-blue-900 text-white overflow-hidden">
+        <motion.div
+          initial={{ scale: 1 }}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Image
+            src="/about_hero.jpg"
+            alt="Schedule Hero"
+            width={1920}
+            height={600}
+            className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] object-cover opacity-50"
+            priority
+          />
+        </motion.div>
+        <motion.div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-4"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-red-600 to-gray-900 text-transparent bg-clip-text font-['Montserrat'] drop-shadow-md mb-4"
+            variants={itemVariants}
+          >
+            Class Schedules
+          </motion.h1>
+          <motion.p
+            className="text-base sm:text-lg md:text-xl lg:text-2xl font-['Poppins'] text-red  -100 mb-6 max-w-2xl mx-auto"
+            variants={itemVariants}
+          >
+            Find the perfect class to fit your schedule and fitness goals.
+          </motion.p>
+          <motion.div variants={itemVariants}>
+            <Link
+              href="/membership"
+              className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 sm:px-8 rounded-lg transition-transform duration-300"
+            >
+              <motion.span variants={buttonVariants} whileHover="hover">
+                Join a Class
+              </motion.span>
+            </Link>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Schedule Section */}
+      <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-amber-500 to-red-600 text-transparent bg-clip-text font-['Oswald'] drop-shadow-md"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Weekly Class Schedule
+        </motion.h2>
+        {/* Mobile: Card Layout */}
+        <div className="block lg:hidden space-y-6">
+          {schedule.map((day, index) => (
+            <motion.div
+              key={day.day}
+              className="bg-white rounded-lg shadow-lg border border-gray-200 p-6"
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-amber-500 to-red-600 text-transparent bg-clip-text font-['Oswald'] mb-4">
+                {day.day}
+              </h3>
+              {day.classes.map((classItem, i) => (
+                <motion.div
+                  key={i}
+                  className="flex items-center gap-4 mb-4 last:mb-0"
+                  variants={cardVariants}
+                  whileHover="hover"
+                >
+                  <Image
+                    src={classItem.image}
+                    alt={classItem.type}
+                    width={100}
+                    height={100}
+                    className="w-20 h-20 object-cover rounded-lg"
+                  />
+                  <div>
+                    <p className="text-gray-900 font-['Poppins'] font-semibold">{classItem.time}</p>
+                    <p className="text-gray-600 font-['Poppins']">{classItem.type}</p>
+                    <p className="text-gray-500 font-['Poppins'] text-sm">Instructor: {classItem.instructor}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          ))}
+        </div>
+        {/* Desktop: Table Layout */}
+        <div className="hidden lg:block">
+          <motion.table
+            className="w-full bg-white rounded-lg shadow-lg border border-gray-200"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <thead>
+              <tr className="bg-gray-50">
+                {schedule.map((day, index) => (
+                  <th
+                    key={day.day}
+                    className="py-4 px-6 text-lg font-bold text-gray-900 font-['Oswald'] border-b"
+                  >
+                    {day.day}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                {schedule.map((day, index) => (
+                  <td key={day.day} className="py-4 px-6 border-b align-top">
+                    <motion.div className="space-y-4" variants={containerVariants}>
+                      {day.classes.map((classItem, i) => (
+                        <motion.div
+                          key={i}
+                          className="flex items-center gap-4"
+                          variants={cardVariants}
+                          whileHover="hover"
+                        >
+                          <Image
+                            src={classItem.image}
+                            alt={classItem.type}
+                            width={60}
+                            height={60}
+                            className="w-12 h-12 object-cover rounded-lg"
+                          />
+                          <div>
+                            <p className="text-gray-900 font-['Poppins'] font-semibold">{classItem.time}</p>
+                            <p className="text-gray-600 font-['Poppins']">{classItem.type}</p>
+                            <p className="text-gray-500 font-['Poppins'] text-sm">Instructor: {classItem.instructor}</p>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  </td>
+                ))}
+              </tr>
+            </tbody>
+          </motion.table>
+        </div>
+      </div>
+
+      {/* Contact Info Section */}
+      <div className="bg-white py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-amber-500 to-red-600 text-transparent bg-clip-text font-['Oswald'] drop-shadow-md"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Contact Us for Scheduling
+          </motion.h2>
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div variants={itemVariants}>
+              <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-amber-500 to-red-600 text-transparent bg-clip-text font-['Oswald']">
+                Address
+              </h3>
+              <p className="text-gray-600 font-['Poppins']">
+                123 Fitness Lane, Jaipur, Rajasthan 302001, India
+              </p>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-amber-500 to-red-600 text-transparent bg-clip-text font-['Oswald']">
+                Phone
+              </h3>
+              <p className="text-gray-600 font-['Poppins']">
+                +91 123-456-7890
+              </p>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-amber-500 to-red-600 text-transparent bg-clip-text font-['Oswald']">
+                Email
+              </h3>
+              <p className="text-gray-600 font-['Poppins']">
+                contact@maharanafitness.com
+              </p>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-amber-500 to-red-600 text-transparent bg-clip-text font-['Oswald']">
+                Hours
+              </h3>
+              <p className="text-gray-600 font-['Poppins']">
+                Mon-Fri: 6 AM - 10 PM<br />
+                Sat-Sun: 8 AM - 8 PM
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* CTA Footer */}
+      <div className="bg-blue-900 text-white py-12 text-center">
+        <motion.h2
+          className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 bg-gradient-to-r from-red-600 to-gray-900 text-transparent bg-clip-text font-['Oswald'] drop-shadow-md"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Ready to Join a Class?
+        </motion.h2>
+        <Link href="/membership" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 sm:px-8 rounded-lg">
+          <motion.span
+            variants={buttonVariants}
+            whileHover="hover"
+            animate={{ boxShadow: '0 0 15px rgba(59, 130, 246, 0.5)' }}
+            transition={{ duration: 0.4, yoyo: Infinity }}
+          >
+            Join Now
+          </motion.span>
+        </Link>
+      </div>
+    </div>
+  );
+}
