@@ -233,7 +233,7 @@ export default function Contact() {
               viewport={{ once: true }}
             >
               <Image
-                src="/gym.jpg"
+                src="/4.jpg"
                 alt="Gym Location Map"
                 width={600}
                 height={400}
