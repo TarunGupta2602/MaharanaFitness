@@ -192,7 +192,7 @@ export default function Membership() {
                 ))}
               </ul>
               <Link
-                href="/signup"
+                href="/contact"
                 className="inline-block w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg mt-4 text-center transition-transform duration-300"
               >
                 <motion.span variants={buttonVariants} whileHover="hover">
@@ -228,7 +228,7 @@ export default function Membership() {
                 Address
               </h3>
               <p className="text-gray-600 font-['Poppins']">
-                123 Fitness Lane, Jaipur, Rajasthan 302001, India
+                Dhaulana, Hapur, UP, India
               </p>
             </motion.div>
             <motion.div variants={itemVariants}>
@@ -236,7 +236,7 @@ export default function Membership() {
                 Phone
               </h3>
               <p className="text-gray-600 font-['Poppins']">
-                +91 123-456-7890
+                +91  7017410007
               </p>
             </motion.div>
             <motion.div variants={itemVariants}>

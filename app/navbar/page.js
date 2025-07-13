@@ -22,7 +22,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4 min-w-[180px]">
          <span className="uppercase tracking-widest text-2xl font-extrabold bg-gradient-to-r from-gray-600 to-gray-900 text-transparent bg-clip-text font-['Montserrat']">Health Club</span>
           <div className="h-8 w-px bg-gray-300 mx-2" />
-         <span className="uppercase tracking-wide text-xl font-extrabold bg-gradient-to-l from-gray-600 to-gray-500 text-transparent bg-clip-text font-['Roboto_Condensed'] hover:bg-gradient-to-r transition-all duration-300">Maharana Fitness</span>
+         <span className="uppercase tracking-wide text-xl font-extrabold bg-gradient-to-l from-gray-600 to-gray-500 text-transparent bg-clip-text font-['Roboto_Condensed'] hover:bg-gradient-to-r transition-all duration-300">Maharana Pratap Fitness</span>
         </div>
         {/* Hamburger Icon for Mobile */}
         <button
@@ -69,7 +69,7 @@ export default function Navbar() {
               </button>
               <div className="flex flex-col items-start gap-1 mb-8 mt-2">
                 <span className="uppercase font-bold text-lg text-gray-900">Health Club</span>
-                <span className="uppercase text-sm font-semibold text-gray-600">Maharana Fitness</span>
+                <span className="uppercase text-sm font-semibold text-gray-600">Maharana Pratap Fitness</span>
               </div>
               <ul className="flex flex-col gap-4 w-full">
                 {navItems.map((item) => (

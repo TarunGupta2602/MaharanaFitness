@@ -61,49 +61,49 @@ export default function Schedules() {
     {
       day: 'Monday',
       classes: [
-        { time: '7:00 AM', type: 'HIIT', instructor: 'Coach Anika', image: '/2.jpg' },
-        { time: '6:00 PM', type: 'Yoga', instructor: 'Coach Anika', image: '/yoga.jpg' },
+        { time: '7:00 AM', type: 'HIIT', instructor: 'Manessh Rana Maharana', image: '/2.jpg' },
+        { time: '6:00 PM', type: 'Yoga', instructor: 'Manessh Rana Maharana', image: '/yoga.jpg' },
       ],
     },
     {
       day: 'Tuesday',
       classes: [
-        { time: '8:00 AM', type: 'Personal Training', instructor: 'Coach Anika', image: '/2.jpg' },
-        { time: '7:00 PM', type: 'Cardio Kickboxing', instructor: 'Coach Anika', image: '/2.jpg' },
+        { time: '8:00 AM', type: 'Personal Training', instructor: 'Manessh Rana Maharana', image: '/2.jpg' },
+        { time: '7:00 PM', type: 'Cardio Kickboxing', instructor: 'Manessh Rana Maharana', image: '/2.jpg' },
       ],
     },
     {
       day: 'Wednesday',
       classes: [
-        { time: '6:30 AM', type: 'Yoga', instructor: 'Coach Anika', image: '/yoga.jpg' },
-        { time: '5:30 PM', type: 'Strength Training', instructor: 'Coach Anika', image: '/2.jpg' },
+        { time: '6:30 AM', type: 'Yoga', instructor: 'Manessh Rana Maharana', image: '/yoga.jpg' },
+        { time: '5:30 PM', type: 'Strength Training', instructor: 'Manessh Rana Maharana', image: '/2.jpg' },
       ],
     },
     {
       day: 'Thursday',
       classes: [
-        { time: '7:00 AM', type: 'Group Fitness', instructor: 'Coach Anika', image: '/2.jpg' },
-        { time: '6:00 PM', type: 'Nutrition Workshop', instructor: 'Coach Anika', image: '/4.jpg' },
+        { time: '7:00 AM', type: 'Group Fitness', instructor: 'Manessh Rana Maharana', image: '/2.jpg' },
+        { time: '6:00 PM', type: 'Nutrition Workshop', instructor: 'Manessh Rana Maharana', image: '/4.jpg' },
       ],
     },
     {
       day: 'Friday',
       classes: [
-        { time: '8:00 AM', type: 'Personal Training', instructor: 'Coach Anika', image: '/2.jpg' },
-        { time: '7:00 PM', type: 'Zumba', instructor: 'Coach Anika', image: '/2.jpg' },
+        { time: '8:00 AM', type: 'Personal Training', instructor: 'Manessh Rana Maharana', image: '/2.jpg' },
+        { time: '7:00 PM', type: 'Zumba', instructor: 'Manessh Rana Maharana', image: '/2.jpg' },
       ],
     },
     {
       day: 'Saturday',
       classes: [
-        { time: '9:00 AM', type: 'Yoga', instructor: 'Coach Anika', image: '/yoga.jpg' },
-        { time: '11:00 AM', type: 'HIIT', instructor: 'Coach Anika', image: '/2.jpg' },
+        { time: '9:00 AM', type: 'Yoga', instructor: 'Manessh Rana Maharana', image: '/yoga.jpg' },
+        { time: '11:00 AM', type: 'HIIT', instructor: 'Manessh Rana Maharana', image: '/2.jpg' },
       ],
     },
     {
       day: 'Sunday',
       classes: [
-        { time: '10:00 AM', type: 'Restorative Yoga', instructor: 'Coach Anika', image: '/yoga.jpg' },
+        { time: '10:00 AM', type: 'Restorative Yoga', instructor: 'Manessh Rana Maharana', image: '/yoga.jpg' },
       ],
     },
   ];

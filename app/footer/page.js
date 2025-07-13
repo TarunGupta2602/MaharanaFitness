@@ -8,8 +8,8 @@ export default function Footer() {
         <div>
           <h3 className="text-xl font-bold mb-4">Contact Us</h3>
           <p className="mb-2">Email: info@maharanafitnessclub.com</p>
-          <p className="mb-2">Phone: +91-123-456-7890</p>
-          <p>Address: 123 Fitness Lane, Mumbai, India</p>
+          <p className="mb-2">Phone: +91-7017410007</p>
+          <p>Address: DHAULANA, UP, India</p>
         </div>
 
         {/* Quick Links */}

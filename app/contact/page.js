@@ -196,7 +196,7 @@ export default function Contact() {
                   Address
                 </h3>
                 <p className="text-gray-600 font-['Poppins']">
-                  123 Fitness Lane, Jaipur, Rajasthan 302001, India
+                  Dhulana, Hapur, UP, India
                 </p>
               </motion.div>
               <motion.div variants={itemVariants}>
@@ -204,7 +204,7 @@ export default function Contact() {
                   Phone
                 </h3>
                 <p className="text-gray-600 font-['Poppins']">
-                  +91 123-456-7890
+                  +91 7017410007
                 </p>
               </motion.div>
               <motion.div variants={itemVariants}>

@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   // Enhanced Framer Motion variants for better animations
@@ -298,19 +299,24 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.div className="lg:w-1/2 order-2 lg:order-1" variants={itemVariants}>
+            <motion.div className="lg:w-1/2 order-2 lg:order-1 flex flex-col items-center" variants={itemVariants}>
               <motion.h3 
-                className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 text-transparent bg-clip-text font-['Inter'] mb-6"
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 text-transparent bg-clip-text font-['Inter'] mb-6 text-center flex items-center gap-6 justify-center"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                Coach Anika
+                <span>Manessh Rana Maharana</span>
+                <span className="inline-block w-32 h-32 rounded-full overflow-hidden border-4 border-blue-400 bg-white shadow-lg">
+                  <Image src="/gym.jpg" alt="Manessh Rana Maharana" width={128} height={128} className="object-cover w-full h-full" />
+                </span>
               </motion.h3>
-              <p className="text-lg sm:text-xl text-gray-700 font-['Inter'] leading-relaxed mb-8">
-                With over 10 years of experience, Coach Anika specializes in strength training, HIIT, and yoga. Her personalized approach ensures every member achieves their fitness goals in a supportive and motivating environment.
+              <div className="text-lg font-semibold text-gray-800 text-center">Head Trainer & Owner</div>
+              <div className="text-sm text-blue-600 font-bold text-center mb-4">10+ Years Experience</div>
+              <p className="text-lg sm:text-xl text-gray-700 font-['Inter'] leading-relaxed mb-8 text-center">
+                Manessh Rana Maharana is a seasoned bodybuilding coach and the proud owner of Maharana Pratap Fitness. With over a decade of hands-on experience, he has transformed the lives of countless clients, helping them achieve their dream physiques. Manessh has also won numerous medals in bodybuilding competitions, making him a trusted expert in the field. His passion, dedication, and proven track record ensure every member receives the best guidance and motivation on their fitness journey.
               </p>
               <motion.div
-                className="flex gap-8"
+                className="flex gap-8 justify-center"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -326,7 +332,7 @@ export default function Home() {
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-purple-600">50+</div>
-                  <div className="text-sm text-gray-600 font-['Inter']">Certifications</div>
+                  <div className="text-sm text-gray-600 font-['Inter']">Certifications & Medals</div>
                 </div>
               </motion.div>
             </motion.div>
@@ -337,20 +343,7 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <div className="relative">
-                <motion.div
-                  className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl opacity-10 blur-xl"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                />
-                <Image
-                  src="/4.jpg"
-                  alt="Coach Anika"
-                  width={500}
-                  height={400}
-                  className="relative w-full h-80 sm:h-96 object-cover rounded-2xl shadow-2xl"
-                />
-              </div>
+              <TrainerCarousel />
             </motion.div>
           </motion.div>
         </div>
@@ -480,6 +473,28 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function TrainerCarousel() {
+  const images = ["/gym2.jpg", "/gym1.jpg"];
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+  return (
+    <div className="relative w-72 h-80 sm:w-96 sm:h-[28rem] mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-white transition-all duration-700">
+      <Image
+        src={images[index]}
+        alt="Manessh Rana Maharana"
+        fill
+        className="object-cover object-center transition-all duration-700"
+        priority
+      />
     </div>
   );
 }
