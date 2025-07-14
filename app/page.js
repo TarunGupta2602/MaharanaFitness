@@ -437,6 +437,67 @@ export default function Home() {
         </motion.div>
       </div>
 
+      {/* Client Transformations Section */}
+      <div className="container mx-auto py-20 px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 font-['Inter'] mb-4"
+            variants={floatingVariants}
+            animate="animate"
+          >
+            Client Transformations
+          </motion.h2>
+          <motion.div
+            className="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto rounded-full"
+            initial={{ width: 0 }}
+            whileInView={{ width: 96 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.5 }}
+          />
+          <motion.p
+            className="text-lg text-gray-600 mt-6 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            Real results from our dedicated clients. No names, just inspiration!
+          </motion.p>
+        </motion.div>
+        <motion.div
+          className="flex flex-col md:flex-row gap-8 justify-center items-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <motion.div className="w-full md:w-1/2 flex justify-center" whileHover={{ scale: 1.03 }}>
+            <Image
+              src="/tranformation1.jpg"
+              alt="Client Transformation 1"
+              width={500}
+              height={500}
+              className="rounded-xl shadow-lg object-cover max-h-[400px] w-auto"
+            />
+          </motion.div>
+          <motion.div className="w-full md:w-1/2 flex justify-center" whileHover={{ scale: 1.03 }}>
+            <Image
+              src="/transformation2.jpg"
+              alt="Client Transformation 2"
+              width={500}
+              height={500}
+              className="rounded-xl shadow-lg object-cover max-h-[400px] w-auto"
+            />
+          </motion.div>
+        </motion.div>
+      </div>
+
       {/* CTA Footer */}
       <div className="bg-gradient-to-br from-gray-900 via-slate-900 to-black text-white py-20 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-cyan-600/10 to-blue-600/10" />
