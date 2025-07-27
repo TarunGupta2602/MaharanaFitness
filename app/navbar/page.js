@@ -10,7 +10,7 @@ export default function Navbar() {
     
     { href: "/about", label: "About us" },
     { href: "/membership", label: "Membership" },
-    { href: "/services", label: "Services" },
+
     { href: "/schedules", label: "Schedules" },
     { href: "/contact", label: "Contact" },
   ];
