@@ -130,7 +130,7 @@ export default function Home() {
           >
             Transform Your Life at
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-              Maharana Fitness
+              Maharana Pratap Fitness 
             </span>
           </motion.h1>
           <motion.p
@@ -433,7 +433,7 @@ export default function Home() {
       </div>
 
       {/* Transformations Section */}
-      <div className="bg-gradient-to-br from-gray-50 to-gray-100 py-24">
+      <div className="bg-[#e0f2f1] relative py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-20"

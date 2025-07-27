@@ -49,16 +49,17 @@ export const metadata = {
     type: "website",
   },
  
-  themeColor: "#000000",
+  
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
+    icon: "/gym.ico"
+  }
+ 
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
