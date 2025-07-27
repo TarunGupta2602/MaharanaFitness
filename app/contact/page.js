@@ -121,7 +121,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Success/Error Modal */}
       {showModal && (
         <motion.div
