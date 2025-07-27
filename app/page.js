@@ -99,54 +99,47 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white overflow-hidden">
-        <motion.div
-          initial={{ scale: 1 }}
-          whileHover={{ scale: 1.01 }}
-          transition={{ duration: 0.8 }}
-          className="relative"
-        >
+      <div className="relative bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white overflow-hidden flex flex-col justify-center min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] max-h-[100vh]">
+        <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] min-h-[300px] max-h-[100vh]">
           <Image
             src="/8.png"
             alt="Fitness Hero"
-            width={1920}
-            height={600}
-            className="w-full h-[70vh] sm:h-[80vh] md:h-[90vh] object-cover opacity-70"
+            fill
+            className="w-full h-full object-cover opacity-70"
             priority
           />
           {/* Professional overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60" />
-        </motion.div>
-        
+        </div>
         <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-4 z-10 w-full max-w-6xl"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-2 sm:px-4 z-10 w-full max-w-6xl flex flex-col items-center justify-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-['Inter'] mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-['Inter'] mb-4 sm:mb-6 leading-tight"
             variants={itemVariants}
           >
             Transform Your Life at
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-              Maharana Pratap Fitness 
+              Maharana Pratap Fitness
             </span>
           </motion.h1>
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl font-light text-gray-200 mb-10 max-w-3xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl font-light text-gray-200 mb-6 sm:mb-10 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
             Professional training programs designed to help you achieve your fitness goals with expert guidance and world-class facilities
           </motion.p>
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center" 
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
             variants={itemVariants}
           >
             <motion.div variants={floatingVariants} animate="animate">
               <Link href="#plans">
                 <motion.button
-                  className="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-4 px-8 sm:px-12 rounded-lg text-lg shadow-lg border border-blue-500/30"
+                  className="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 sm:px-8 sm:px-12 rounded-lg text-base sm:text-lg shadow-lg border border-blue-500/30"
                   variants={buttonVariants}
                   whileHover="hover"
                   whileTap="tap"
@@ -158,7 +151,7 @@ export default function Home() {
             <motion.div variants={floatingVariants} animate="animate" style={{ animationDelay: "1s" }}>
               <Link href="#plans">
                 <motion.button
-                  className="inline-block bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white font-semibold py-4 px-8 sm:px-12 rounded-lg text-lg transition-all duration-300"
+                  className="inline-block bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white font-semibold py-3 px-6 sm:px-8 sm:px-12 rounded-lg text-base sm:text-lg transition-all duration-300"
                   variants={buttonVariants}
                   whileHover="hover"
                   whileTap="tap"
